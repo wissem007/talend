@@ -1,0 +1,43 @@
+# Talend CI/CD on Azure DevOps
+# Build Pipeline for building and publishing on Nexus
+
+trigger: none
+pool:
+ vmImage: 'ubuntu-latest'
+
+variables:
+- group: Talend Variables
+- name: project_name
+  value: 'XXX'
+- name: artifact_name
+  value: 'XXX'
+- name: artifact_version
+  value: 'XXX'
+
+steps:
+  - task: DownloadSecureFile@1
+    name: settings_xml
+    inputs:
+      secureFile: maven_settings.xml
+
+  - task: DownloadSecureFile@1
+    name: license
+    inputs:
+      secureFile: license
+
+  - task: DownloadSecureFile@1
+    name: patch
+    inputs:
+      secureFile: patch.zip
+
+  - task: Maven@3
+    inputs:
+        mavenPomFile: '$(project_name)/poms/pom.xml' 
+        mavenOptions: |
+          -Dlicense.path=$(license.secureFilePath)
+          -Dupdatesite.path=$(updatesite_path)
+          -Dpatch.path=$(patch.secureFilePath)
+          -DaltDeploymentRepository=releases::default::$(nexus_url)/repository/releases/
+          -Xmx3096m -Xms1024m
+        options: '--settings $(settings_xml.secureFilePath) -pl jobs/process/$(artifact_name)_$(artifact_version) -am -fae'
+        goals: 'deploy'
