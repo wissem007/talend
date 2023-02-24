@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="FilePath" prompt="FilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\CityHub\FLUX ARTICLE\ARTICLE\INPUT\PIV_ROS_AR_woocommerce produits1.csv"/>
+    <contextParameter comment="" name="FileName" prompt="FileName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="PIV_ROS_AR_woocommerce produits1.csv"/>
+    <contextParameter comment="" name="REP_REJET" prompt="REP_REJET?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\CityHub\FLUX ARTICLE\ARTICLE\REJET\"/>
+    <contextParameter comment="" name="REP_INPUT" prompt="REP_INPUT?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\CityHub\FLUX ARTICLE\ARTICLE\INPUT\"/>
+    <contextParameter comment="" name="templateRejet" prompt="templateRejet?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\CityHub\FLUX ARTICLE\ARTICLE\TEMPLATE\TemplateRejetArt.xlsx"/>
+    <contextParameter comment="" name="REP_REJET_TMP" prompt="REP_REJET_TMP?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\CityHub\FLUX ARTICLE\ARTICLE\REJET\REJET_TMP\"/>
+    <contextParameter comment="" name="MAIL_CC" prompt="MAIL_CC?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_FROM" prompt="MAIL_FROM?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_HOTE" prompt="MAIL_HOTE?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_OBJECT" prompt="MAIL_OBJECT?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_PORT" prompt="MAIL_PORT?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_PWD" prompt="MAIL_PWD?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_TO" prompt="MAIL_TO?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="MAIL_USR" prompt="MAIL_USR?" promptNeeded="false" repositoryContextId="_R7PRoPGZEey6BfKlfqHc1A" type="id_String" value=""/>
+    <contextParameter comment="" name="logo" prompt="logo?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  </context>
+  <parameters>
+    <elementParameter field="CHECK" name="LOG4J_RUN_ACTIVATE" value="true" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="64" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:mYlAFr5vkADjnlvCIMmo9unZbFZPRN8n5Qy5K2pg" show="false"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tJDBCOutput" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ToTbhduYVupQg18+3d4p90J8f3428+vHylYyzrwb" show="false"/>
+    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
+    <routinesParameter id="_5YVXsOuyEeyW14ne00BmZw" name="DQTechnical"/>
+    <routinesParameter id="_5XUrEOuyEeyW14ne00BmZw" name="DataMasking"/>
+    <routinesParameter id="_5WEt4OuyEeyW14ne00BmZw" name="DataOperation"/>
+    <routinesParameter id="_5XecEOuyEeyW14ne00BmZw" name="DataQualityDependencies"/>
+    <routinesParameter id="_5XZjkOuyEeyW14ne00BmZw" name="DataQuality"/>
+    <routinesParameter id="_5XmX4OuyEeyW14ne00BmZw" name="DqStringHandling"/>
+    <routinesParameter id="_5WY28OuyEeyW14ne00BmZw" name="Mathematical"/>
+    <routinesParameter id="_5WhZ0OuyEeyW14ne00BmZw" name="Numeric"/>
+    <routinesParameter id="_5Wm5YOuyEeyW14ne00BmZw" name="Relational"/>
+    <routinesParameter id="_5Uy7gOuyEeyW14ne00BmZw" name="SQLike"/>
+    <routinesParameter id="_5WsY8OuyEeyW14ne00BmZw" name="StringHandling"/>
+    <routinesParameter id="_5WxRcOuyEeyW14ne00BmZw" name="TalendDataGenerator"/>
+    <routinesParameter id="_5W5NQOuyEeyW14ne00BmZw" name="TalendDate"/>
+    <routinesParameter id="_5XLhIOuyEeyW14ne00BmZw" name="TalendStringUtil"/>
+    <routinesParameter id="_5XEMYOuyEeyW14ne00BmZw" name="TalendString"/>
+  </parameters>
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="416">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
+    <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.FilePath"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HEADER" value="0"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="REMOVE_EMPTY_ROW" value="true"/>
+    <elementParameter field="CHECK" name="UNCOMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_rZ290Ce2EeyBW65IrxbAVA - metadata" show="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIR" value="&quot;E:/Talend_Workspace&quot;" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="RANDOM" value="false"/>
+    <elementParameter field="TEXT" name="NB_RANDOM" value="10" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Statut_flux"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code_article"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Libelle"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_directeur"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_usage"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Marquage_article"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_famille_peremption"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_reference_base"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Descriptif_article"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Famille_article"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_variante_logistique"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_type_VL"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Quantite_VL"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Ref_commande_VL"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_net"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_brut"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hauteur"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Largeur"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Profondeur"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Volume"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Prix_standard"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_controle_reception"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_reconditionnement_reception"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_debut_service_conditionnement"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_fin_service_conditionnement"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_Kit"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC3"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC4"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC5"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC6"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC7"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC8"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC9"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC10"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM3"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM4"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM5"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CHECK_FIELDS_NUM" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_DATE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="SPLITRECORD" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DECODE" value="false"/>
+    <elementParameter field="TABLE" name="DECODE_COLS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Statut_flux"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code_article"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Libelle"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_directeur"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_usage"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Marquage_article"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_famille_peremption"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_reference_base"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Descriptif_article"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Famille_article"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_variante_logistique"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_type_VL"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Quantite_VL"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Ref_commande_VL"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_net"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_brut"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hauteur"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Largeur"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Profondeur"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Volume"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Prix_standard"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_controle_reception"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_reconditionnement_reception"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_debut_service_conditionnement"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_fin_service_conditionnement"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_Kit"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC1"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC2"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC3"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC4"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC5"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC6"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC7"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC8"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC9"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC10"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM1"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM2"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM3"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM4"/>
+      <elementValue elementRef="DECODE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM5"/>
+      <elementValue elementRef="DECODE" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="DESTINATION" value="" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>Piv_Article"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputDelimited_1">
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="3" name="code_actvite" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Libelle_reduit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_article_poids_variable" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_article_consigne" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_article_alcool" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_article_dangereux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Nombre_de_jours_stabilisation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Nb_jr_ordonnancement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="Fourchette_banalisation_date_stockage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="5" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="Fourchette_banalisation_date_preparation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="5" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_poids_detaille_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_poids_detaille_preparation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_pose_plat_precolisage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_article_nouveau" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="230" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_desactivation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="230" usefulColumn="true"/>
+      <column comment="" key="true" length="2" name="Code_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="true" length="15" name="Code_famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="true" length="1" name="Top_dissociation_prealable_eventuelle" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="true" length="10" name="Code_information_complementaire" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="Valeur_information_complementaire_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSchemaComplianceCheck" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="416">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSchemaComplianceCheck_1" show="false"/>
+    <elementParameter field="RADIO" name="CHECK_ALL" value="false"/>
+    <elementParameter field="RADIO" name="CUSTOMER" value="true"/>
+    <elementParameter field="TABLE" name="CHECKCOLS">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Statut_flux"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="false"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code_article"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="false"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Libelle"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_directeur"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_usage"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Marquage_article"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_famille_peremption"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_reference_base"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Descriptif_article"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="false"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Famille_article"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_variante_logistique"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_type_VL"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Quantite_VL"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Ref_commande_VL"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_net"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_brut"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hauteur"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Largeur"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Profondeur"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Volume"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Prix_standard"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_controle_reception"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_reconditionnement_reception"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_debut_service_conditionnement"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_fin_service_conditionnement"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_Kit"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC1"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC2"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC3"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC4"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC5"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC6"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC7"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC8"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC9"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC10"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM1"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM2"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM3"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM4"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM5"/>
+      <elementValue elementRef="SELECTED_TYPE" value="String"/>
+      <elementValue elementRef="DATEPATTERN" value=""/>
+      <elementValue elementRef="NULLABLE" value="true"/>
+      <elementValue elementRef="MAX_LENGTH" value="true"/>
+    </elementParameter>
+    <elementParameter field="LABEL" name="NOTE_CUSTOMER" value="Please note:&#xA;(1) Nullable setting in this table is more preferential than the default schema.&#xA;(2) Length checking is base on the value of the default schema."/>
+    <elementParameter field="RADIO" name="CHECK_ANOTHER" value="false"/>
+    <elementParameter field="LABEL" name="NOTE_CHECK_ANOTHER" value="Please note: only index matching, for example, the second column of checking schema is correspond to the second of input schema" show="false"/>
+    <elementParameter field="CHECK" name="SUB_STRING" value="false"/>
+    <elementParameter field="LABEL" name="NOTE_SUB_STRING" value="     If exceed, either trim the field when above option checked or reject the row."/>
+    <elementParameter field="LABEL" name="INFO" value="If only one column has error, the errCode value is a summation of all error code; else the errCode is 16:&#xA;(1) Type discrepancy (include wrong date pattern): 2&#xA;(2) Empty or NULL: 4&#xA;(3) Length/Precision Error: 8"/>
+    <elementParameter field="CHECK" name="FAST_DATE_CHECK" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with multi-threaded jobs)"/>
+    <elementParameter field="CHECK" name="STRICT_DATE_CHECK" value="false"/>
+    <elementParameter field="CHECK" name="IGNORE_TIMEZONE" value="false"/>
+    <elementParameter field="CHECK" name="EMPTY_IS_NULL" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ALL_EMPTY_ARE_NULL" value="true"/>
+    <elementParameter field="TABLE" name="EMPTY_NULL_TABLE" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Statut_flux"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code_article"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Libelle"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_directeur"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_usage"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Marquage_article"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_famille_peremption"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_reference_base"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Descriptif_article"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Famille_article"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_variante_logistique"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_type_VL"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Quantite_VL"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Ref_commande_VL"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_net"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_brut"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hauteur"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Largeur"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Profondeur"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Volume"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Prix_standard"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_controle_reception"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_reconditionnement_reception"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_debut_service_conditionnement"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_fin_service_conditionnement"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_Kit"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC1"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC2"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC3"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC4"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC5"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC6"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC7"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC8"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC9"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC10"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM1"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM2"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM3"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM4"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM5"/>
+      <elementValue elementRef="EMPTY_NULL" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tSchemaComplianceCheck_1">
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="OTHER" name="OTHER"/>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="416">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_1" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.REP_INPUT+&quot;tmp_&quot;+context.FileName"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileOutputDelimited_1">
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_2" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.REP_REJET+&quot;tmp_&quot;+context.FileName"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileOutputDelimited_2">
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="896" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_ukcbEA5TEe2C3rDpGK0qSA-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
+    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="out1">
+        <mapperTableEntries name="errorMessage" expression="row1.errorMessage " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Statut_flux" expression="row1.Statut_flux " type="id_String" nullable="true"/>
+        <mapperTableEntries name="code_article" expression="row1.code_article " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Libelle" expression="row1.Libelle " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Mot_directeur" expression="row1.Mot_directeur " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_usage" expression="row1.Code_usage " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Marquage_article" expression="row1.Marquage_article " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_famille_peremption" expression="row1.Code_famille_peremption " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_reference_base" expression="row1.Code_reference_base " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Descriptif_article" expression="row1.Descriptif_article " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Famille_article" expression="row1.Famille_article " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_variante_logistique" expression="row1.Code_variante_logistique " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_type_VL" expression="row1.Code_type_VL " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Quantite_VL" expression="row1.Quantite_VL " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Ref_commande_VL" expression="row1.Ref_commande_VL " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Poids_net" expression="row1.Poids_net " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Poids_brut" expression="row1.Poids_brut " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Hauteur" expression="row1.Hauteur " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Largeur" expression="row1.Largeur " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Profondeur" expression="row1.Profondeur " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Volume" expression="row1.Volume " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Prix_standard" expression="row1.Prix_standard " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_controle_reception" expression="row1.Top_controle_reception " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_reconditionnement_reception" expression="row1.Top_reconditionnement_reception " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Date_debut_service_conditionnement" expression="row1.Date_debut_service_conditionnement " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Date_fin_service_conditionnement" expression="row1.Date_fin_service_conditionnement " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_Kit" expression="row1.Top_Kit " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC1" expression="row1.CODE_IC1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC2" expression="row1.CODE_IC2 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC3" expression="row1.CODE_IC3 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC4" expression="row1.CODE_IC4 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC5" expression="row1.CODE_IC5 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC6" expression="row1.CODE_IC6 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC7" expression="row1.CODE_IC7 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC8" expression="row1.CODE_IC8 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC9" expression="row1.CODE_IC9 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC10" expression="row1.CODE_IC10 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM1" expression="row1.CODE_COM1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM2" expression="row1.CODE_COM2 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM3" expression="row1.CODE_COM3 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM4" expression="row1.CODE_COM4 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM5" expression="row1.CODE_COM5 " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="Statut_flux" type="id_String" nullable="true"/>
+        <mapperTableEntries name="code_article" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Libelle" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Mot_directeur" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_usage" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Marquage_article" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_famille_peremption" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_reference_base" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Descriptif_article" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Famille_article" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_variante_logistique" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code_type_VL" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Quantite_VL" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Ref_commande_VL" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Poids_net" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Poids_brut" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Hauteur" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Largeur" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Profondeur" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Volume" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Prix_standard" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_controle_reception" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_reconditionnement_reception" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Date_debut_service_conditionnement" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Date_fin_service_conditionnement" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Top_Kit" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC2" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC3" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC4" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC5" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC6" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC7" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC8" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC9" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_IC10" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM2" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM3" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM4" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_COM5" type="id_String" nullable="true"/>
+        <mapperTableEntries name="errorCode" type="id_String" nullable="true"/>
+        <mapperTableEntries name="errorMessage" type="id_String" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tReplace" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tReplace_1" show="false"/>
+    <elementParameter field="CHECK" name="SIMPLE_MODE" value="true"/>
+    <elementParameter field="LABEL" name="SIMPLEMODE_OLDLABLE" value="Simple mode works with regex expression(in last version)" show="false"/>
+    <elementParameter field="TABLE" name="SUBSTITUTIONS">
+      <elementValue elementRef="INPUT_COLUMN" value="errorMessage"/>
+      <elementValue elementRef="SEARCH_PATTERN" value="&quot;exceed max length&quot;"/>
+      <elementValue elementRef="REPLACE_STRING" value="&quot;dépasse la longueur maximale&quot;"/>
+      <elementValue elementRef="WHOLE_WORD" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="USE_GLOB" value="false"/>
+      <elementValue elementRef="COMMENT" value=""/>
+      <elementValue elementRef="INPUT_COLUMN" value="errorMessage"/>
+      <elementValue elementRef="SEARCH_PATTERN" value="&quot;empty or null&quot;"/>
+      <elementValue elementRef="REPLACE_STRING" value="&quot;vide ou nulle&quot;"/>
+      <elementValue elementRef="WHOLE_WORD" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="USE_GLOB" value="false"/>
+      <elementValue elementRef="COMMENT" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="STRICT_MATCH" value="true" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_MODE" value="false"/>
+    <elementParameter field="TABLE" name="ADVANCED_SUBST" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tReplace_1">
+      <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1184" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputExcel_1" show="false"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.REP_REJET+context.FileName.substring(0,context.FileName.indexOf(&quot;.&quot;))+&quot;.xlsx&quot;"/>
+    <elementParameter field="TEXT" name="SHEETNAME" value="&quot;Sheet1&quot;"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="APPEND_FILE" value="true"/>
+    <elementParameter field="CHECK" name="APPEND_SHEET" value="true"/>
+    <elementParameter field="CHECK" name="FIRST_CELL_Y_ABSOLUTE" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_CELL_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="FIRST_CELL_Y" value="0" show="false"/>
+    <elementParameter field="CHECK" name="KEEP_CELL_FORMATING" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="FONT" value=""/>
+    <elementParameter field="CHECK" name="IS_ALL_AUTO_SZIE" value="false"/>
+    <elementParameter field="TABLE" name="AUTO_SZIE_SETTING">
+      <elementValue elementRef="SCHEMA_COLUMN" value="errorMessage"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Statut_flux"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="code_article"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Libelle"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Mot_directeur"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_usage"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Marquage_article"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_famille_peremption"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_reference_base"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Descriptif_article"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Famille_article"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_variante_logistique"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Code_type_VL"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Quantite_VL"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Ref_commande_VL"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_net"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Poids_brut"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hauteur"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Largeur"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Profondeur"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Volume"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Prix_standard"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_controle_reception"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_reconditionnement_reception"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_debut_service_conditionnement"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Date_fin_service_conditionnement"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Top_Kit"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC1"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC2"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC3"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC4"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC5"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC6"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC7"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC8"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC9"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_IC10"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM1"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM2"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM3"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM4"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODE_COM5"/>
+      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROTECT_FILE" value="false"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:hC81YIY+8glQd4NRAbJcCpR4KMijH7Xw5au/cHvA" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="100" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="TRUNCATE_EXCEEDING_CHARACTERS" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="true"/>
+    <elementParameter field="CHECK" name="RECALCULATE_FORMULA" value="false"/>
+    <elementParameter field="CHECK" name="STREAMING_APPEND" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputExcel_1">
+      <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Statut_flux" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="code_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="Libelle" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Mot_directeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_usage" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Marquage_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_famille_peremption" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Code_reference_base" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="263" name="Descriptif_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="263" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="Famille_article" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="15" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="Code_variante_logistique" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="2" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="Code_type_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="3" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Quantite_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="Ref_commande_VL" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="16" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_net" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="Poids_brut" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="9" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Hauteur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Largeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Profondeur" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="7" name="Volume" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="7" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="Prix_standard" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="11" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_controle_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_reconditionnement_reception" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_debut_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="Date_fin_service_conditionnement" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="8" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="Top_Kit" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="1" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC6" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC7" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC8" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC9" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="40" name="CODE_IC10" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="40" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM1" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM2" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+      <column comment="" key="false" length="70" name="CODE_COM5" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="70" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSendMail" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="864">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSendMail_1" show="false"/>
+    <elementParameter field="TEXT" name="TO" value="context.MAIL_TO"/>
+    <elementParameter field="TEXT" name="FROM" value="context.MAIL_FROM"/>
+    <elementParameter field="CHECK" name="NEED_PERSONAL_NAME" value="false"/>
+    <elementParameter field="TEXT" name="PERSONAL_NAME" value="&quot;sender&quot;" show="false"/>
+    <elementParameter field="TEXT" name="CC" value="context.MAIL_CC"/>
+    <elementParameter field="TEXT" name="BCC" value=""/>
+    <elementParameter field="TEXT" name="SUBJECT" value="context.MAIL_OBJECT"/>
+    <elementParameter field="MEMO_MESSAGE" name="MESSAGE" value="&quot;&#xD;&#xA;&lt;html>&lt;body>  &lt;p>&#xD;&#xA;   Bonjour : &lt;br />&#xD;&#xA;   &lt;br />&#xD;&#xA;&#x9;Les articles dans le  fichier: &quot;+context.REP_REJET+context.FileName.substring(0,context.FileName.indexOf(&quot;.&quot;))+&quot;.xlsx&quot;+&quot; ci-joint sont rejetés &lt;br />&#xD;&#xA;    &#xD;&#xA;&#x9; &lt;br />&#xD;&#xA;    Cordialement,&#xD;&#xA; &lt;br />&#xD;&#xA;    &lt;img src='cid:logi.png'>&#xD;&#xA;&lt;/p>&lt;/body>&lt;/html>&#xD;&#xA;&quot;&#xD;&#xA;&#xD;&#xA;"/>
+    <elementParameter field="CHECK" name="CHECK_ATTACHMENT" value="true"/>
+    <elementParameter field="TABLE" name="ATTACHMENTS">
+      <elementValue elementRef="FILE" value="context.REP_REJET+context.FileName.substring(0,context.FileName.indexOf(&quot;.&quot;))+&quot;.xlsx&quot;"/>
+      <elementValue elementRef="CONTENT_TRANSFER_ENCODING" value="DEFAULT"/>
+      <elementValue elementRef="FILE" value="context.logo"/>
+      <elementValue elementRef="CONTENT_TRANSFER_ENCODING" value="DEFAULT"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="HEADERS"/>
+    <elementParameter field="TEXT" name="SMTP_HOST" value="context.MAIL_HOTE"/>
+    <elementParameter field="TEXT" name="SMTP_PORT" value="context.MAIL_PORT"/>
+    <elementParameter field="CHECK" name="SSL" value="false"/>
+    <elementParameter field="CHECK" name="STARTTLS" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="IMPORTANCE" value="Normal"/>
+    <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
+    <elementParameter field="TEXT" name="AUTH_USERNAME" value="context.MAIL_USR"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:c4g7GuIk4KcxLye9PF6xy52vm+kIX/2i8HfDVMjfycQ81jm8EZtYmHRstXA="/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="TEXT_SUBTYPE" value="html"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="SET_LOCALHOST" value="false"/>
+    <elementParameter field="TEXT" name="LOCALHOST" value="&quot;localhost&quot;" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSendMail_1"/>
+  </node>
+  <node componentName="tFileCopy" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="256">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCopy_1" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.templateRejet"/>
+    <elementParameter field="CHECK" name="ENABLE_COPY_DIRECTORY" value="false"/>
+    <elementParameter field="DIRECTORY" name="SOURCE_DERECTORY" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="DESTINATION" value="context.REP_REJET"/>
+    <elementParameter field="CHECK" name="RENAME" value="true"/>
+    <elementParameter field="TEXT" name="DESTINATION_RENAME" value="context.FileName.substring(0,context.FileName.indexOf(&quot;.&quot;))+&quot;.xlsx&quot;"/>
+    <elementParameter field="CHECK" name="REMOVE_FILE" value="false"/>
+    <elementParameter field="CHECK" name="REPLACE_FILE" value="true"/>
+    <elementParameter field="CHECK" name="CREATE_DIRECTORY" value="true"/>
+    <elementParameter field="CHECK" name="FAILON" value="false"/>
+    <elementParameter field="CHECK" name="FORCE_COPY_DELETE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRESERVE_LAST_MODIFIED_TIME" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileCopy_1"/>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="736">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.REP_REJET+context.FileName.substring(0,context.FileName.indexOf(&quot;.&quot;))+&quot;.xlsx&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/delete_folder&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PATH" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/delete_folder or delete_file&quot;" show="false"/>
+    <elementParameter field="CHECK" name="FAILON" value="true"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#xA;&quot;File (or path) deleted.&quot;&#xA;&quot;No file (or path) deleted.&quot;&#xA;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="768">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_1" show="false"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;check OK&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="0"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="864">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_2" show="false"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;this is a warning&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="0"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="864">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_2" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.REP_REJET+&quot;tmp_&quot;+context.FileName"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/delete_folder&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PATH" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/delete_folder or delete_file&quot;" show="false"/>
+    <elementParameter field="CHECK" name="FAILON" value="true"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#xA;&quot;File (or path) deleted.&quot;&#xA;&quot;No file (or path) deleted.&quot;&#xA;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_2"/>
+  </node>
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_1" show="false"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="context.REP_REJET"/>
+    <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
+    <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
+    <elementParameter field="CHECK" name="ERROR" value="false"/>
+    <elementParameter field="CHECK" name="GLOBEXPRESSIONS" value="true"/>
+    <elementParameter field="TABLE" name="FILES">
+      <elementValue elementRef="FILEMASK" value="&quot;tmp_*&quot;"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="ORDER_BY_NOTHING" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILENAME" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_FILESIZE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_BY_MODIFIEDDATE" value="false"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_ASC" value="true"/>
+    <elementParameter field="RADIO" name="ORDER_ACTION_DESC" value="false"/>
+    <elementParameter field="CHECK" name="IFEXCLUDE" value="false"/>
+    <elementParameter field="TEXT" name="EXCLUDEFILEMASK" value="&quot;*.txt&quot;" show="false"/>
+    <elementParameter field="CHECK" name="FORMAT_FILEPATH_TO_SLASH" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_3" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/in.csv&quot;" show="false"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;D:/Talend-Studio-20200219_1130-V7.3.1/Talend-Studio-20200219_1130-V7.3.1/workspace/delete_folder&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PATH" value="((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;))"/>
+    <elementParameter field="CHECK" name="FAILON" value="true"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#xA;&quot;File (or path) deleted.&quot;&#xA;&quot;No file (or path) deleted.&quot;&#xA;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_3"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_3" show="false"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Début job check schema&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="0"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_3"/>
+  </node>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tSchemaComplianceCheck_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tWarn_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tSchemaComplianceCheck_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tSchemaComplianceCheck_1" target="tFileOutputDelimited_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+  </connection>
+  <connection connectorName="REJECT" label="row5" lineStyle="0" metaname="tSchemaComplianceCheck_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tSchemaComplianceCheck_1" target="tFileOutputDelimited_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileOutputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileOutputDelimited_2" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tReplace_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="out1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tReplace_1" offsetLabelX="0" offsetLabelY="0" source="tReplace_1" target="tFileOutputExcel_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSendMail_1" offsetLabelX="0" offsetLabelY="0" source="tSendMail_1" target="tFileDelete_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileCopy_1" offsetLabelX="0" offsetLabelY="0" source="tFileCopy_1" target="tFileInputDelimited_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tWarn_1" target="tFileDelete_1">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Integer)globalMap.get(&quot;tFileOutputExcel_1_NB_LINE&quot;))==0"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="If2" show="false"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tWarn_1" target="tWarn_2">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Integer)globalMap.get(&quot;tFileOutputExcel_1_NB_LINE&quot;))>0"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="If1" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tWarn_2" offsetLabelX="0" offsetLabelY="0" source="tWarn_2" target="tSendMail_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tFileCopy_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
+  </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tFileDelete_3">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="2" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="iterate1" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tWarn_3" offsetLabelX="0" offsetLabelY="0" source="tWarn_3" target="tFileList_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
+  </connection>
+  <note opaque="true" posX="288" posY="224" sizeHeight="64" sizeWidth="321" text="Copie du template de fichier Rejet"/>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSendMail_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileCopy_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileDelete_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tWarn_3" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+</talendfile:ProcessType>
